@@ -31,3 +31,15 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+// Packaging executable and plain archive
+tasks.named('bootJar') {
+    archiveClassifier = 'boot'
+    // Configure main class of executable archive explicitly
+    mainClass = 'com.example.springboot3.SpringBoot3Application'
+}
+tasks.named('jar') {
+    archiveClassifier = 'plain'
+    enabled = false // Don't make plain archive
+}
+
